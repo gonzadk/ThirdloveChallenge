@@ -1,2 +1,2 @@
-# ThirdloveChallenge
-Thirdlove's Front-end Code Challenge
+# ThirdLoveChallenge
+ThirdLove's Front-end Code Challenge
