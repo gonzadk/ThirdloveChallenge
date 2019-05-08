@@ -1,8 +1,5 @@
-require('normalize.css/normalize.css');
-require('styles/App.css');
-
-import Product from './Product/Product';
 import React from 'react';
+import Product from "./Product/Product";
 
 class AppComponent extends React.Component {
   render() {
@@ -11,8 +8,5 @@ class AppComponent extends React.Component {
     );
   }
 }
-
-AppComponent.defaultProps = {
-};
 
 export default AppComponent;

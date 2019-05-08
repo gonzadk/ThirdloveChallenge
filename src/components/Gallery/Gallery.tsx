@@ -1,12 +1,17 @@
-require('./Gallery.scss');
-
-import ImageGallery from 'react-image-gallery';
 import React from 'react';
+import ImageGallery from 'react-image-gallery';
 import * as _ from 'lodash';
+
+import './Gallery.scss';
 
 const HTTPS = 'https://';
 
-class Gallery extends React.Component {
+type MyProps = {
+  images: any
+};
+type MyState = {};
+
+class Gallery extends React.Component<MyProps, MyState> {
   render() {
     const isDesktop = false;
     const images = _.map(this.props.images, image => ({
@@ -28,7 +33,5 @@ class Gallery extends React.Component {
     );
   }
 }
-
-Gallery.defaultProps = {};
 
 export default Gallery;

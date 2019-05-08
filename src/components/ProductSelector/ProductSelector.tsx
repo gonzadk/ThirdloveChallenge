@@ -1,9 +1,9 @@
-require('./ProductSelector.scss');
-
 import React from 'react';
 import Dropdown from '../../core-components/Dropdown/Dropdown';
 import { CirclePicker } from 'react-color';
 import * as _ from 'lodash';
+
+import './ProductSelector.scss';
 
 const COLORS = ['#D9E3F0', '#F47373', '#697689'];
 const ID_PROPERTY = 'id';
@@ -11,11 +11,16 @@ const BAND_SIZE_PROPERTY = 'bandSize';
 const CUP_SIZE_PROPERTY = 'cupSize';
 const BAND_SIZE_LENGHT = 2;
 
-class ProductSelector extends React.Component {
-  formatOptions(variants) {
-    const options = {};
+type MyProps = {
+  details: any,
+  variants: any
+};
+type MyState = {};
+class ProductSelector extends React.Component<MyProps, MyState> {
+  formatOptions(variants: any) {
+    const options: any = {};
 
-    return _.each(variants, variant => {
+    return _.each(variants, (variant: any) => {
       if (!options[variant.option1]) {
         options[variant.option1] = [];
       }
@@ -57,7 +62,5 @@ class ProductSelector extends React.Component {
     );
   }
 }
-
-ProductSelector.defaultProps = {};
 
 export default ProductSelector;
