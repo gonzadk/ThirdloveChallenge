@@ -1,0 +1,22 @@
+.product {
+  font-family: OpenSans;
+
+  .product__title {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.09em;
+    margin: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #222222;
+  }
+
+  .product__price {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666666;
+  }
+}

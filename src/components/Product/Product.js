@@ -10,17 +10,17 @@ class Product extends React.Component {
     super(props);
     this.state = {
       error: null,
-      details: null,
-      images: null,
-      isLoading: true
+      gallery: null,
+      productDetails: null,
+      productSelector: null,
+      title: null
     };
   }
 
   componentDidMount() {
     fetch('http://www.mocky.io/v2/5c6c3a92320000e83bbef971')
       .then(response => response.json())
-      .then(this.onSuccess.bind(this))
-      .catch(this.onError.bind(this));
+      .then(this.onSuccess.bind(this)); // TODO: Add an error handler
   }
 
   onSuccess(response) {
@@ -28,29 +28,26 @@ class Product extends React.Component {
 
     this.setState({
       gallery: { images },
-      isLoading: false,
       productDetails: { details: body_html },
-      productSelector: { title, variants }
+      productSelector: { variants, onProductSelectorChange: this.onProductSelectorChange },
+      title
     });
   }
 
-  onError(error) {
-    this.setState({
-      error, // TODO: Create an error handler
-      isLoading: false
-    });
+  onProductSelectorChange() {
+
   }
 
   render() {
-    const { gallery, productDetails, productSelector } = this.state;
+    const { title, gallery, productDetails, productSelector } = this.state;
 
     return (
       <section className="product">
+        <h1 className="product__title"> { title } </h1>
+        <h3 className="product__price"> $68 </h3>
         <Gallery {...gallery}/>
+        <ProductSelector {...productSelector}/>
         <ProductDetails {...productDetails}/>
-        <aside>
-          <ProductSelector {...productSelector}/>
-        </aside>
       </section>
     );
   }
