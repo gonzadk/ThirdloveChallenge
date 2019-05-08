@@ -1,6 +1,6 @@
-require('./ProductSelector.scss');
-
 import React from 'react';
+
+import './ProductSelector.scss';
 
 class ProductSelector extends React.Component {
   render() {
@@ -11,7 +11,5 @@ class ProductSelector extends React.Component {
     );
   }
 }
-
-ProductSelector.defaultProps = {};
 
 export default ProductSelector;

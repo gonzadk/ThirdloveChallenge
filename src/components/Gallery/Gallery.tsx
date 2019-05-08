@@ -1,6 +1,5 @@
-require('./Gallery.scss');
-
 import React from 'react';
+import './Gallery.scss';
 
 class Gallery extends React.Component {
   render() {
@@ -11,7 +10,5 @@ class Gallery extends React.Component {
     );
   }
 }
-
-Gallery.defaultProps = {};
 
 export default Gallery;

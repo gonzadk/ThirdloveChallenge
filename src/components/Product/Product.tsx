@@ -1,17 +1,26 @@
-require('./Product.scss');
-
+import React from 'react';
 import Gallery from '../Gallery/Gallery';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import ProductSelector from '../ProductSelector/ProductSelector';
-import React from 'react';
 
-class Product extends React.Component {
-  constructor(props) {
+import './Product.scss';
+
+type MyProps = {};
+type MyState = {
+  gallery: any,
+  error: any,
+  productDetails: any,
+  productSelector: any,
+  isLoading: boolean
+};
+class Product extends React.Component<MyProps, MyState> {
+  constructor(props: any) {
     super(props);
     this.state = {
       error: null,
-      details: null,
-      images: null,
+      productDetails: null,
+      productSelector: null,
+      gallery: null,
       isLoading: true
     };
   }
@@ -23,7 +32,7 @@ class Product extends React.Component {
       .catch(this.onError.bind(this));
   }
 
-  onSuccess(response) {
+  onSuccess(response: any) {
     const { body_html, images, title, variants } = response.product;
 
     this.setState({
@@ -34,7 +43,7 @@ class Product extends React.Component {
     });
   }
 
-  onError(error) {
+  onError(error: any) {
     this.setState({
       error, // TODO: Create an error handler
       isLoading: false
@@ -55,7 +64,5 @@ class Product extends React.Component {
     );
   }
 }
-
-Product.defaultProps = {};
 
 export default Product;
