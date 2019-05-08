@@ -1,0 +1,38 @@
+.product-details {
+  padding: 20px;
+
+  .product-details__title {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #222222;
+
+    &::after {
+      content: "";
+      margin-top: 13px;
+      width: 100%;
+      display: block;
+      border-bottom: #f7f7f7 3px solid;
+    }
+  }
+
+  .product-details__details {
+    font-family: Montserrat;
+    font-size: 13px;
+    line-height: 1.77;
+    color: #444444;    
+
+    p {
+
+    }
+
+    ul {
+      padding-left: 20px;
+      
+      li {
+
+      }
+    }
+  }
+}

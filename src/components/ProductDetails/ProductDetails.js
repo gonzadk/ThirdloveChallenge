@@ -9,10 +9,10 @@ class ProductDetails extends React.Component {
 
     return (
       <section className="product-details">
-        <h2>Details</h2>
+        <h2 className="product-details__title">Details</h2>
 
-        {/* Avoid this kind of insertions if it is project in production */}
-        <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(details)}}></div>
+        {/* TODO: Modify API to return a json instead of plain HTML */}
+        <div className="product-details__details" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(details)}}></div>
       </section>
     );
   }
