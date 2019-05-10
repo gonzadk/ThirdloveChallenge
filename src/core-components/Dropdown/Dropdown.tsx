@@ -3,14 +3,14 @@ import * as _ from 'lodash';
 
 import './Dropdown.scss';
 
-type MyProps = {
+type DropdownProps = {
   title: string,
   options: any,
   idProperty: string,
   nameProperty: string
 };
-type MyState = {};
-class Dropdown extends React.Component<MyProps, MyState> {
+type DropdownState = {};
+class Dropdown extends React.Component<DropdownProps, DropdownState> {
   RenderOptions(options: any, idProperty: string, nameProperty: string) {
     return (
       _.map(options, (option: any) => (
@@ -26,8 +26,8 @@ class Dropdown extends React.Component<MyProps, MyState> {
 
     return (
       <div className="cc-dropdown">
-        <span> { title } </span>
-        <select>
+        <span className="cc-dropdown__title"> { title } </span>
+        <select className="cc-dropdown__select">
           {
             (options && options.length) && this.RenderOptions(options, idProperty, nameProperty)
           }

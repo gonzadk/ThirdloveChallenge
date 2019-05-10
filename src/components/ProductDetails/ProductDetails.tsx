@@ -3,11 +3,11 @@ import DOMPurify from 'dompurify';
 
 import './ProductDetails.scss';
 
-type MyProps = {
+type ProductDetailsProps = {
   details: any
 };
-type MyState = {};
-class ProductDetails extends React.Component<MyProps, MyState> {
+type ProductDetailsState = {};
+class ProductDetails extends React.Component<ProductDetailsProps, ProductDetailsState> {
   render() {
     const { details } = this.props;
 
@@ -16,7 +16,8 @@ class ProductDetails extends React.Component<MyProps, MyState> {
         <h2 className="product-details__title">Details</h2>
 
         {/* TODO: Modify API to return a json instead of plain HTML */}
-        <div className="product-details__details" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(details) }}/>
+        <div className="product-details__details"
+             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(details) }}/>
 
       </section>
     );
