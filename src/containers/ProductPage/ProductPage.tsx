@@ -58,7 +58,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
    *
    * @param product
    */
-  private formatProduct(product: ResponseProduct): void {
+  formatProduct(product: ResponseProduct): void {
     const images = this.formatImages(product.images);
     const braSet: BraSet = this.formatVariants(product.variants);
 
@@ -77,7 +77,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
    *
    * @param images
    */
-  private formatImages(images: ResponseImage[]): Image[] {
+  formatImages(images: ResponseImage[]): Image[] {
     const HTTPS = 'https://';
 
     return _.map(images, (image: ResponseImage) => ({
@@ -92,7 +92,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
    *
    * @param variants
    */
-  private formatVariants(variants: ResponseVariant[]): BraSet {
+  formatVariants(variants: ResponseVariant[]): BraSet {
     const braSet: BraSet = {};
 
     _.each(variants, (variant: ResponseVariant) => {
@@ -120,7 +120,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
    *
    * @param variant
    */
-  private getBandSize(variant: ResponseVariant): string {
+  getBandSize(variant: ResponseVariant): string {
     return variant.option2.substring(0, 2);
   }
 
@@ -129,7 +129,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
    *
    * @param variant
    */
-  private getCupSize(variant: ResponseVariant): string {
+  getCupSize(variant: ResponseVariant): string {
     return variant.option2.substring(2, 3);
   }
 

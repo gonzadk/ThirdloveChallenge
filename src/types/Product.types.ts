@@ -34,7 +34,7 @@ export type Image = {
   thumbnail: string
 };
 
-export type Bra = {
+export type Bras = {
   [size: string]: BraCup[]
 };
 
@@ -46,5 +46,5 @@ export type BraCup = {
 }
 
 export type BraSet = {
-  [bra: string]: Bra
+  [bra: string]: Bras
 }
