@@ -1,25 +1,18 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import * as _ from 'lodash';
-import { ResponseImage } from "../../types/Product.types";
+import { Image } from '../../types/Product.types';
 
 import './Gallery.scss';
 
-const HTTPS = 'https://';
-
 type GalleryProps = {
-  images: ResponseImage[]
+  images: Image[]
 };
 type GalleryState = {};
 
 class Gallery extends React.Component<GalleryProps, GalleryState> {
   render() {
     const isDesktop = false;
-    const images = _.map(this.props.images, (image: ResponseImage) => ({
-      original: `${HTTPS}${image.src1000}`,
-      thumbnail: `${HTTPS}${image.src100}`,
-      bulletClass: 'bullet-class'
-    }));
+    const { images } = this.props;
 
     return (
       <section className="gallery">

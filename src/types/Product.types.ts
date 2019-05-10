@@ -1,21 +1,50 @@
+export type ResponseProduct = {
+  body_html: string,
+  id: number,
+  images: ResponseImage[],
+  title: string,
+  variants: ResponseVariant[]
+};
+
 export type ResponseImage = {
   src100: string,
   src600: string,
   src1000: string
 };
 
-export type Variant = {
+export type ResponseVariant = {
   id: number,
-  price: string,
+  inventory_quantity: number,
   option1: string,
   option2: string,
-  inventory_quantity: number
+  price: string
 };
 
-export interface ResponseProduct {
+export type Product = {
+  braSet: BraSet,
+  details: string,
   id: number,
   title: string,
-  body_html: string,
-  images: ResponseImage[],
-  variants: Variant[]
+  images: Image[]
+}
+
+export type Image = {
+  bulletClass: string,
+  original: string,
+  thumbnail: string
+};
+
+export type Bra = {
+  [size: string]: BraCup[]
+};
+
+export type BraCup = {
+  cupSize: string,
+  id: number,
+  price: string,
+  stock: number
+}
+
+export type BraSet = {
+  [bra: string]: Bra
 }
