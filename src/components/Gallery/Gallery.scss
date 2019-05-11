@@ -33,6 +33,14 @@
           display: none;
         }
       }
+
+      .image-gallery-thumbnails-wrapper {
+        .image-gallery-thumbnail.active {
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+          margin-left: 4px;
+        }
+      }
     }
   }
 }

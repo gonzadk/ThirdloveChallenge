@@ -25,6 +25,14 @@
     }
   }
 
+  .product-selector__row {
+    margin: 0;
+
+    .product-selector__row--value {
+      font-weight: 600;
+    }
+  }
+
   @media (min-width: 1025px) {
     padding: 0;
 
