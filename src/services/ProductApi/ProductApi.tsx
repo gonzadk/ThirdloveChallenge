@@ -2,7 +2,7 @@ const ProductApi = {
   getProduct
 };
 
-const QUERY: string = 'http://www.mocky.io/v2/5c6c3a92320000e83bbef971';
+const QUERY: string = 'https://www.mocky.io/v2/5c6c3a92320000e83bbef971';
 
 /**
  * Performs the call to get the product
