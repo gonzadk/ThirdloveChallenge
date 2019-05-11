@@ -3,20 +3,22 @@ import DOMPurify from 'dompurify';
 
 import './ProductDetails.scss';
 
-type MyProps = {
+type ProductDetailsProps = {
   details: any
 };
-type MyState = {};
-class ProductDetails extends React.Component<MyProps, MyState> {
+type ProductDetailsState = {};
+class ProductDetails extends React.Component<ProductDetailsProps, ProductDetailsState> {
   render() {
     const { details } = this.props;
 
     return (
       <section className="product-details">
-        <h2>Details</h2>
+        <h2 className="product-details__title">Details</h2>
 
-        {/* Avoid this kind of insertions if it is project in production */}
-        <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(details) }}/>
+        {/* TODO: Modify API to return a json instead of plain HTML */}
+        <div className="product-details__details"
+             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(details) }}/>
+
       </section>
     );
   }

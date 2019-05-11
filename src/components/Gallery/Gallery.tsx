@@ -1,11 +1,28 @@
 import React from 'react';
+import ImageGallery from 'react-image-gallery';
+import { Image } from '../../types/ProductTypes/Product.types';
+
 import './Gallery.scss';
 
-class Gallery extends React.Component {
+type GalleryProps = {
+  images: Image[]
+};
+type GalleryState = {};
+
+class Gallery extends React.Component<GalleryProps, GalleryState> {
   render() {
+    const isDesktop = false;
+    const { images } = this.props;
+
     return (
       <section className="gallery">
-        Gallery
+        <ImageGallery items={images}
+                      showNav={false}
+                      showThumbnails={isDesktop}
+                      thumbnailPosition={'left'}
+                      showFullscreenButton={false}
+                      showPlayButton={false}
+                      showBullets={!isDesktop}/>
       </section>
     );
   }

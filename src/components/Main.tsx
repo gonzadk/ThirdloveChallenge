@@ -1,10 +1,10 @@
 import React from 'react';
-import Product from "./Product/Product";
+import ProductPage from '../containers/ProductPage/ProductPage';
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <Product/>
+      <ProductPage/>
     );
   }
 }
