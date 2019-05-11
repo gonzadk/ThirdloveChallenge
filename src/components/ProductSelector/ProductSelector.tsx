@@ -42,7 +42,7 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
    */
   getBand(): ProductsByBand {
     const { productsByColor, selectedBand, selectedColor } = this.props;
-    return productsByColor[selectedColor].productsByBand[selectedBand];
+    return productsByColor[selectedColor].bands[selectedBand];
   }
 
   /**
@@ -50,7 +50,7 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
    */
   getCup(): ProductsByCup {
     const { productsByColor, selectedBand, selectedColor, selectedCup } = this.props;
-    return productsByColor[selectedColor].productsByBand[selectedBand].productsByCup[selectedCup];
+    return productsByColor[selectedColor].bands[selectedBand].cups[selectedCup];
   }
 
   /**
@@ -113,7 +113,7 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
 
         <div className="product-selector__dropdown-container">
           <Dropdown title={'Band Size'}
-                    options={productsByColor[selectedColor].productsByBand}
+                    options={productsByColor[selectedColor].bands}
                     value={selectedBand}
                     onChange={this.onBandChange}
                     property={SIZE_PROPERTY}/>
@@ -122,13 +122,13 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
         <div className="product-selector__dropdown-container
                         product-selector__dropdown-container--right">
           <Dropdown title={'Cup Size'}
-                    options={band.productsByCup}
+                    options={band.cups}
                     value={selectedCup}
                     onChange={this.onCupChange}
                     property={SIZE_PROPERTY}/>
         </div>
 
-        <Button onClick={this.onAddToBag} label={BUTTON_LABEL}/>
+        <Button onClick={this.onAddToBag} label={BUTTON_LABEL} disabled={cup.stock === 0}/>
       </section>
     );
   }

@@ -21,7 +21,7 @@ export type ResponseVariant = {
 };
 
 export type Product = {
-  productsByColor: ProductsByColor[],
+  colors: ProductsByColor[],
   details: string,
   id: number,
   title: string,
@@ -36,7 +36,7 @@ export type Image = {
 
 export type ProductsByBand = {
   size: string,
-  productsByCup: ProductsByCup[]
+  cups: ProductsByCup[]
 };
 
 export type ProductsByCup = {
@@ -49,7 +49,7 @@ export type ProductsByCup = {
 export type ProductsByColor = {
   hex: string,
   name: string,
-  productsByBand: ProductsByBand[]
+  bands: ProductsByBand[]
 }
 
 export type ProductChange = {

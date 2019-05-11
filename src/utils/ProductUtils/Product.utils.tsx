@@ -24,14 +24,14 @@ const ProductUtils = {
  */
 function formatProduct(product: ResponseProduct): Product {
   const images = formatImages(product.images);
-  const productsByColor: ProductsByColor[] = formatVariants(product.variants);
+  const colors: ProductsByColor[] = formatVariants(product.variants);
 
   return {
     title: product.title,
     details: product.body_html,
     id: product.id,
-    images,
-    productsByColor
+    colors,
+    images
   }
 }
 
@@ -65,24 +65,23 @@ function formatVariants(variants: ResponseVariant[]): ProductsByColor[] {
       productsByColor.push({
         hex: COLORS[colorIndex], // We assume only 5 different colors will be returned
         name: variant.option1,
-        productsByBand: []
+        bands: []
       });
     }
 
-    const { productsByBand } = productsByColor[colorIndex];
+    const { bands } = productsByColor[colorIndex];
     const bandSize: string = getBandSize(variant);
-    let bandIndex = _.findIndex(productsByBand, {size: bandSize});
+    let bandIndex = _.findIndex(bands, {size: bandSize});
 
     if (bandIndex === -1) {
-      bandIndex = productsByBand.length;
-      productsByBand.push({
+      bandIndex = bands.length;
+      bands.push({
         size: bandSize,
-        productsByCup: []
+        cups: []
       });
     }
 
-    const { productsByCup } = productsByBand[bandIndex];
-    productsByCup.push({
+    bands[bandIndex].cups.push({
       id: variant.id,
       price: variant.price,
       stock: variant.inventory_quantity,
