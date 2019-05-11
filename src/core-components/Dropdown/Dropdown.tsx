@@ -4,32 +4,38 @@ import * as _ from 'lodash';
 import './Dropdown.scss';
 
 type DropdownProps = {
-  title: string,
+  onChange(change: any): void,
   options: any,
-  idProperty: string,
-  nameProperty: string
+  property: string
+  title: string,
+  value: number
 };
 type DropdownState = {};
 class Dropdown extends React.Component<DropdownProps, DropdownState> {
-  RenderOptions(options: any, idProperty: string, nameProperty: string) {
+  /**
+   * Generates the options to be rendered depending on the props
+   */
+  renderOptions() {
+    const { options, property } = this.props;
+
     return (
-      _.map(options, (option: any) => (
-        <option key={option[idProperty]} value={option[idProperty]}>
-          { option[nameProperty] }
+      _.map(options, (option: any, index: number) => (
+        <option key={option[property]} value={index}>
+          { option[property] }
         </option>
       ))
     )
   }
 
   render() {
-    const { title, options, idProperty, nameProperty } = this.props;
+    const { title, options, onChange, value } = this.props;
 
     return (
       <div className="cc-dropdown">
         <span className="cc-dropdown__title"> { title } </span>
-        <select className="cc-dropdown__select">
+        <select className="cc-dropdown__select" onChange={onChange} value={value}>
           {
-            (options && options.length) && this.RenderOptions(options, idProperty, nameProperty)
+            (options && options.length) && this.renderOptions.bind(this)()
           }
         </select>
       </div>

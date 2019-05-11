@@ -21,7 +21,7 @@ export type ResponseVariant = {
 };
 
 export type Product = {
-  braSet: BraSet,
+  productsByColor: ProductsByColor[],
   details: string,
   id: number,
   title: string,
@@ -34,17 +34,26 @@ export type Image = {
   thumbnail: string
 };
 
-export type Bras = {
-  [size: string]: BraCup[]
+export type ProductsByBand = {
+  size: string,
+  productsByCup: ProductsByCup[]
 };
 
-export type BraCup = {
-  cupSize: string,
+export type ProductsByCup = {
   id: number,
   price: string,
+  size: string,
   stock: number
 }
 
-export type BraSet = {
-  [bra: string]: Bras
+export type ProductsByColor = {
+  hex: string,
+  name: string,
+  productsByBand: ProductsByBand[]
+}
+
+export type ProductChange = {
+  colorHex?: string,
+  cupSize?: number,
+  bandSize?: number
 }

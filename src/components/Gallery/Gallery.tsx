@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import { Image } from '../../types/Product.types';
+import { Image } from '../../types/ProductTypes/Product.types';
 
 import './Gallery.scss';
 
