@@ -17,7 +17,6 @@ import './ProductPage.scss';
 type ProductProps = {};
 type ProductState = {
   productsByColor: ProductsByColor[],
-  error: any,
   images: Image[],
   details: string,
   selectedBand: number,
@@ -29,7 +28,6 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      error: null,
       images: [],
       details: '',
       productsByColor: [],
@@ -83,6 +81,9 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
     }
   }
 
+  /**
+   * Returns a formatted price to be correctly displayed
+   */
   getPrice(): string {
     const { selectedBand, selectedColor, selectedCup, productsByColor } = this.state;
     let { price } = productsByColor[selectedColor].bands[selectedBand].cups[selectedCup];
