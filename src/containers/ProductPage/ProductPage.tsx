@@ -19,7 +19,6 @@ type ProductState = {
   productsByColor: ProductsByColor[],
   error: any,
   images: Image[],
-  isLoading: boolean,
   details: string,
   selectedBand: number,
   selectedColor: number,
@@ -32,7 +31,6 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
     this.state = {
       error: null,
       images: [],
-      isLoading: true,
       details: '',
       productsByColor: [],
       selectedBand: 0,
@@ -87,7 +85,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
 
   getPrice(): string {
     const { selectedBand, selectedColor, selectedCup, productsByColor } = this.state;
-    let { price } = productsByColor[selectedColor].bands[selectedBand].cups[selectedCup]
+    let { price } = productsByColor[selectedColor].bands[selectedBand].cups[selectedCup];
     price = price.split('.')[0];
 
     return `$${price}`;
@@ -95,8 +93,8 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
 
   render() {
     const {
-      images,
       details,
+      images,
       selectedBand,
       selectedColor,
       selectedCup,
@@ -105,21 +103,29 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
     } = this.state;
 
     return (
-      <section className="product">
-        <h1 className="product__title"> { title } </h1>
-        <h3 className="product__price">
-          {!_.isEmpty(productsByColor) && this.getPrice.bind(this)() }
+      <section className="product-page">
+        <div className="product-page__title">
+          <h1 className="product-page__title__label"> { title } </h1>
+          <h3 className="product-page__title__price">
+            {!_.isEmpty(productsByColor) && this.getPrice.bind(this)() }
           </h3>
-        <Gallery images={images}/>
-        {
-          !_.isEmpty(productsByColor) &&
-          <ProductSelector productsByColor={productsByColor}
-                           onProductSelectorChange={this.onProductSelectorChange.bind(this)}
-                           selectedBand={selectedBand}
-                           selectedColor={selectedColor}
-                           selectedCup={selectedCup}
-                           title={title}/>
-        }
+        </div>
+
+        <article className="product-page__gallery">
+          <Gallery images={images}/>
+        </article>
+
+        <article className="product-page__selector">
+          {
+            !_.isEmpty(productsByColor) &&
+            <ProductSelector productsByColor={productsByColor}
+                             onProductSelectorChange={this.onProductSelectorChange.bind(this)}
+                             selectedBand={selectedBand}
+                             selectedColor={selectedColor}
+                             selectedCup={selectedCup}
+                             title={title}/>
+          }
+        </article>
         <ProductDetails details={details}/>
       </section>
     );

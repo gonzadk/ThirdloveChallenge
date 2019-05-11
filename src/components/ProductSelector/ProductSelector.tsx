@@ -100,7 +100,14 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
     return (
       <section className="product-selector">
         <div className="product-selector__color-container">
-          <span> COLOR: {productsByColor[selectedColor].name} </span>
+
+          <p className="product-selector__row">
+            <span className="product-selector__row--title"> COLOR: </span>
+            <span className="product-selector__row--value">
+                {productsByColor[selectedColor].name}
+              </span>
+          </p>
+
           <div className="product-selector__color-container__color-picker">
             <CirclePicker colors={ProductUtils.COLORS}
                           circleSize={30}
@@ -108,10 +115,18 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
                           width={'300px'}
                           onChangeComplete={this.onColorSelected}/>
           </div>
-          <span> STOCK: {cup.stock} </span>
+
+          <p className="product-selector__row">
+            <span className="product-selector__row--title"> STOCK: </span>
+            <span className="product-selector__row--value">
+              {cup.stock}
+            </span>
+          </p>
+
         </div>
 
-        <div className="product-selector__dropdown-container">
+        <div className="product-selector__dropdown-container
+                        product-selector__dropdown-container--left">
           <Dropdown title={'Band Size'}
                     options={productsByColor[selectedColor].bands}
                     value={selectedBand}

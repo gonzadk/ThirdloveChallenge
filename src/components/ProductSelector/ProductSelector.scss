@@ -9,13 +9,35 @@
 
   .product-selector__dropdown-container {
     max-width: 170px;
-    width: 47%;
+    width: 50%;
     float: left;
-    padding-top: 24px;
-    padding-bottom: 19px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 24px 5px 19px;
+
+    &.product-selector__dropdown-container--left {
+      padding-left: 0;
+    }
 
     &.product-selector__dropdown-container--right {
-      padding-left: 17px;
+      padding-right: 0;
+    }
+  }
+
+  .product-selector__row {
+    margin: 0;
+
+    .product-selector__row--value {
+      font-weight: 600;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    padding: 0;
+
+    .product-selector__dropdown-container {
+      max-width: unset;
     }
   }
 }
