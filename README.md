@@ -1,5 +1,9 @@
 # ThirdLoveChallenge
-ThirdLove's Front-end Code Challenge
+This repository contains a Front-end Code Challenge for ThirdLove
+It was developed using React v16
+
+## Demo
+To access to a live demo you can click on this [link](https://gonzadk.github.io/ThirdloveChallenge/)
 
 ## Available Scripts
 
