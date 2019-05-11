@@ -87,8 +87,10 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
 
   getPrice(): string {
     const { selectedBand, selectedColor, selectedCup, productsByColor } = this.state;
+    let { price } = productsByColor[selectedColor].bands[selectedBand].cups[selectedCup]
+    price = price.split('.')[0];
 
-    return productsByColor[selectedColor].bands[selectedBand].cups[selectedCup].price;
+    return `$${price}`;
   }
 
   render() {
@@ -106,7 +108,7 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
       <section className="product">
         <h1 className="product__title"> { title } </h1>
         <h3 className="product__price">
-          {!_.isEmpty(productsByColor) && this.getPrice.bind(this) }
+          {!_.isEmpty(productsByColor) && this.getPrice.bind(this)() }
           </h3>
         <Gallery images={images}/>
         {
