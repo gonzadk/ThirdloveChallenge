@@ -2,8 +2,6 @@
 
 .gallery {
   .image-gallery .image-gallery-slide-wrapper {
-    width: 100%;
-
     .image-gallery-bullets .image-gallery-bullet {
       background-color: #ccc;
       margin: 0 5px;
@@ -12,6 +10,28 @@
       
       &.active {
         background-color: #444;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .image-gallery {
+      .image-gallery-slide-wrapper {
+        width: 100%;
+      }
+
+      .image-gallery-thumbnails-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .image-gallery {
+      .image-gallery-slide-wrapper {
+        .image-gallery-bullets {
+          display: none;
+        }
       }
     }
   }

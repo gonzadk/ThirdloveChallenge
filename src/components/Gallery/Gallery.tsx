@@ -11,18 +11,17 @@ type GalleryState = {};
 
 class Gallery extends React.Component<GalleryProps, GalleryState> {
   render() {
-    const isDesktop = false;
     const { images } = this.props;
 
     return (
       <section className="gallery">
         <ImageGallery items={images}
                       showNav={false}
-                      showThumbnails={isDesktop}
+                      showThumbnails={true}
                       thumbnailPosition={'left'}
                       showFullscreenButton={false}
                       showPlayButton={false}
-                      showBullets={!isDesktop}/>
+                      showBullets={true}/>
       </section>
     );
   }
