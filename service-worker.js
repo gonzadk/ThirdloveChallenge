@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ThirdloveChallenge/precache-manifest.c445eb5243d47e90a16355f74cad8a15.js"
+  "/ThirdloveChallenge/precache-manifest.733ddd9e8b0b77e5ad7ad9bc152e55bd.js"
 );
 
 self.addEventListener('message', (event) => {

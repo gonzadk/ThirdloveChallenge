@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ThirdloveChallenge/static/css/main.cfe680b6.chunk.css",
-    "main.js": "/ThirdloveChallenge/static/js/main.1448d83f.chunk.js",
-    "main.js.map": "/ThirdloveChallenge/static/js/main.1448d83f.chunk.js.map",
+    "main.js": "/ThirdloveChallenge/static/js/main.b40bc4eb.chunk.js",
+    "main.js.map": "/ThirdloveChallenge/static/js/main.b40bc4eb.chunk.js.map",
     "runtime~main.js": "/ThirdloveChallenge/static/js/runtime~main.8f687873.js",
     "runtime~main.js.map": "/ThirdloveChallenge/static/js/runtime~main.8f687873.js.map",
     "static/js/2.dd715ba9.chunk.js": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js",
     "static/js/2.dd715ba9.chunk.js.map": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js.map",
     "index.html": "/ThirdloveChallenge/index.html",
-    "precache-manifest.c445eb5243d47e90a16355f74cad8a15.js": "/ThirdloveChallenge/precache-manifest.c445eb5243d47e90a16355f74cad8a15.js",
+    "precache-manifest.733ddd9e8b0b77e5ad7ad9bc152e55bd.js": "/ThirdloveChallenge/precache-manifest.733ddd9e8b0b77e5ad7ad9bc152e55bd.js",
     "service-worker.js": "/ThirdloveChallenge/service-worker.js",
     "static/css/main.cfe680b6.chunk.css.map": "/ThirdloveChallenge/static/css/main.cfe680b6.chunk.css.map"
   }
