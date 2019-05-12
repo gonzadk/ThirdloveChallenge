@@ -19,21 +19,22 @@
   }
 
   .product-details__details {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 13px;
     line-height: 1.77;
     color: #444444;    
 
-    p {
-
-    }
-
-    ul {
+     ul {
       padding-left: 20px;
-      
-      li {
-
-      }
     }
+  }
+
+  @media (min-width: 1025px) {
+    width: 60%;
+    padding: 20px 0;
+  }
+
+  @media (min-width: 1400px) {
+    width: 67%;
   }
 }
