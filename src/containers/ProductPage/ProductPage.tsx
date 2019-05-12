@@ -104,31 +104,38 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
     } = this.state;
 
     return (
-      <section className="product-page">
-        <div className="product-page__title">
-          <h1 className="product-page__title__label"> { title } </h1>
-          <h3 className="product-page__title__price">
-            {!_.isEmpty(productsByColor) && this.getPrice.bind(this)() }
-          </h3>
-        </div>
+      <div>
+        {
+          !_.isEmpty(productsByColor) &&
+            <section className="product-page">
+              <div className="product-page__title">
+                <h1 className="product-page__title__label"> { title } </h1>
+                <h3 className="product-page__title__price">
+                  {!_.isEmpty(productsByColor) && this.getPrice.bind(this)() }
+                </h3>
+              </div>
 
-        <article className="product-page__gallery">
-          <Gallery images={images}/>
-        </article>
+              <article className="product-page__gallery">
+                <Gallery images={images}/>
+              </article>
 
-        <article className="product-page__selector">
-          {
-            !_.isEmpty(productsByColor) &&
-            <ProductSelector productsByColor={productsByColor}
-                             onProductSelectorChange={this.onProductSelectorChange.bind(this)}
-                             selectedBand={selectedBand}
-                             selectedColor={selectedColor}
-                             selectedCup={selectedCup}
-                             title={title}/>
-          }
-        </article>
-        <ProductDetails details={details}/>
-      </section>
+              <article className="product-page__selector">
+                <ProductSelector productsByColor={productsByColor}
+                                 onProductSelectorChange={this.onProductSelectorChange.bind(this)}
+                                 selectedBand={selectedBand}
+                                 selectedColor={selectedColor}
+                                 selectedCup={selectedCup}
+                                 title={title}/>
+              </article>
+
+              <ProductDetails details={details}/>
+
+            </section>
+        }
+
+
+
+      </div>
     );
   }
 }
