@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e40102e896874b7c90196a4d0757b028",
+    "revision": "fd692325a55f2f3568b33241c631610f",
     "url": "/ThirdloveChallenge/index.html"
   },
   {
-    "revision": "88cf919dfe11c91a692e",
-    "url": "/ThirdloveChallenge/static/css/main.b077ecdd.chunk.css"
+    "revision": "3e21a9c4d7adfa01ab4b",
+    "url": "/ThirdloveChallenge/static/css/main.cfe680b6.chunk.css"
   },
   {
     "revision": "2940fb946e8861533374",
     "url": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js"
   },
   {
-    "revision": "88cf919dfe11c91a692e",
+    "revision": "3e21a9c4d7adfa01ab4b",
     "url": "/ThirdloveChallenge/static/js/main.1448d83f.chunk.js"
   },
   {
