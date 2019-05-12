@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ThirdloveChallenge/static/css/main.b077ecdd.chunk.css",
+    "main.js": "/ThirdloveChallenge/static/js/main.1448d83f.chunk.js",
+    "main.js.map": "/ThirdloveChallenge/static/js/main.1448d83f.chunk.js.map",
+    "runtime~main.js": "/ThirdloveChallenge/static/js/runtime~main.8f687873.js",
+    "runtime~main.js.map": "/ThirdloveChallenge/static/js/runtime~main.8f687873.js.map",
+    "static/js/2.dd715ba9.chunk.js": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js",
+    "static/js/2.dd715ba9.chunk.js.map": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js.map",
+    "index.html": "/ThirdloveChallenge/index.html",
+    "precache-manifest.2d500de94f706273f82155b2600e0aa0.js": "/ThirdloveChallenge/precache-manifest.2d500de94f706273f82155b2600e0aa0.js",
+    "service-worker.js": "/ThirdloveChallenge/service-worker.js",
+    "static/css/main.b077ecdd.chunk.css.map": "/ThirdloveChallenge/static/css/main.b077ecdd.chunk.css.map"
+  }
+}
