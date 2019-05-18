@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/ThirdloveChallenge/static/css/main.e45faf27.chunk.css",
-    "main.js": "/ThirdloveChallenge/static/js/main.b36c7bad.chunk.js",
+    "main.css": "/ThirdloveChallenge/static/css/main.2ade76a0.chunk.css",
+    "main.js": "/ThirdloveChallenge/static/js/main.0587c35c.chunk.js",
     "runtime~main.js": "/ThirdloveChallenge/static/js/runtime~main.8f687873.js",
-    "static/js/2.dd715ba9.chunk.js": "/ThirdloveChallenge/static/js/2.dd715ba9.chunk.js",
+    "static/js/2.f14675df.chunk.js": "/ThirdloveChallenge/static/js/2.f14675df.chunk.js",
     "index.html": "/ThirdloveChallenge/index.html",
-    "precache-manifest.6bd8d591cd9652b4bf3e6fd34f1dce90.js": "/ThirdloveChallenge/precache-manifest.6bd8d591cd9652b4bf3e6fd34f1dce90.js",
+    "precache-manifest.359a9908e3dbdd04c9b2ba82bca0c66c.js": "/ThirdloveChallenge/precache-manifest.359a9908e3dbdd04c9b2ba82bca0c66c.js",
     "service-worker.js": "/ThirdloveChallenge/service-worker.js"
   }
 }
