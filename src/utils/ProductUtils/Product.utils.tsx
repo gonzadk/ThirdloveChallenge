@@ -58,6 +58,10 @@ function formatImages(images: ResponseImage[]): Image[] {
 function formatVariants(variants: ResponseVariant[]): ProductsByColor[] {
   const productsByColor: ProductsByColor[] = [];
 
+  // This is not the faster way to produce this new data structure since it is hard to generate
+  // but it provides a very fast way to access data after when working with it.
+  // Because of that,
+  // this should be moved to backend a data structure more aligned with the requirements
   _.each(variants, (variant: ResponseVariant) => {
     let colorIndex =_.findIndex(productsByColor, {name: variant.option1});
     if (colorIndex === -1) {

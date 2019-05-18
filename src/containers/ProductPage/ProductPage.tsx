@@ -47,6 +47,10 @@ class ProductPage extends React.Component<ProductProps, ProductState> {
       .then(this.onGetProductSuccess.bind(this));
   }
 
+  /**
+   * Sets the state after the product is retrieved
+   * @param product
+   */
   onGetProductSuccess(product: Product) {
     const { images, colors, title, details } = product;
     this.setState({
