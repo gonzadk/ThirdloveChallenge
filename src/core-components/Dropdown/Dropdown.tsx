@@ -38,6 +38,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
             (options && options.length) && this.renderOptions.bind(this)()
           }
         </select>
+        <i className="cc-dropdown__select--arrow-down fas fa-angle-down"/>
       </div>
     );
   }
