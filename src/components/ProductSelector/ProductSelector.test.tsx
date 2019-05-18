@@ -40,7 +40,7 @@ describe('ProductSelector', () => {
   describe('handle changes', () => {
     it('should handle a color selection', () => {
       // ARRANGE
-      const color = {hex: '#333'};
+      const color = '#333';
 
       // ACT
       component.instance().onColorSelected(color);

@@ -1,6 +1,5 @@
 import React from 'react';
 import Dropdown from '../../core-components/Dropdown/Dropdown';
-import { CirclePicker, ColorResult } from 'react-color';
 import Button from "../../core-components/Button/Button";
 import {
   ProductChange, ProductsByBand,
@@ -10,6 +9,7 @@ import {
 
 import './ProductSelector.scss';
 import ProductUtils from '../../utils/ProductUtils/Product.utils';
+import ColorPicker from '../../core-components/ColorPicker/ColorPicker';
 
 const SIZE_PROPERTY = 'size';
 const BUTTON_LABEL = 'Add to Bag';
@@ -72,8 +72,8 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
    * Handles a change on the selected color and sends the change to the parent
    * @param color
    */
-  onColorSelected(color: ColorResult) {
-    const change: ProductChange = { colorHex: color.hex };
+  onColorSelected(color: string) {
+    const change: ProductChange = { colorHex: color };
     this.props.onProductSelectorChange(change);
   }
 
@@ -113,11 +113,9 @@ class ProductSelector extends React.Component<ProductSelectorProps, ProductSelec
           </p>
 
           <div className="product-selector__color-container__color-picker">
-            <CirclePicker colors={ProductUtils.COLORS}
-                          circleSize={30}
-                          circleSpacing={27.5}
-                          width={'300px'}
-                          onChangeComplete={this.onColorSelected}/>
+            <ColorPicker colors={ProductUtils.COLORS}
+                         selectedColor={ProductUtils.COLORS[selectedColor]}
+                         onChange={this.onColorSelected}/>
           </div>
 
           <p className="product-selector__row">

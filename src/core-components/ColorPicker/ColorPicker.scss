@@ -1,0 +1,35 @@
+.cc-color-picker {
+  display: flex;
+
+  .cc-color-picker__color {
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    margin-left: 25.5px;
+    width: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.cc-color-picker__color--selected {
+      border: 2px solid #c9c9c9;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .cc-color-picker__color {
+      margin-left: 26px;
+
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .cc-color-picker__color {
+      height: 34px;
+      margin-left: 14px;
+      width: 34px;
+    }
+  }
+}
