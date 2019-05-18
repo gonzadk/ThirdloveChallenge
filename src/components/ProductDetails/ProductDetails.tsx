@@ -7,6 +7,10 @@ type ProductDetailsProps = {
   details: any
 };
 type ProductDetailsState = {};
+
+/**
+ * It will render the details of a product
+ */
 class ProductDetails extends React.Component<ProductDetailsProps, ProductDetailsState> {
   render() {
     const { details } = this.props;

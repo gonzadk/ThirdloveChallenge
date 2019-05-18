@@ -9,6 +9,9 @@ type GalleryProps = {
 };
 type GalleryState = {};
 
+/**
+ * Gallery will render the product images
+ */
 class Gallery extends React.Component<GalleryProps, GalleryState> {
   render() {
     const { images } = this.props;

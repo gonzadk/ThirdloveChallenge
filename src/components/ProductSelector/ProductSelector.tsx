@@ -26,6 +26,10 @@ type ProductSelectorState = {};
 
 /**
  * Product selector will contain the options user could customize
+ *
+ * NOTE: library used to render the color picker doesn't offer a way to know which color is selected
+ * via css and because of that the way that the selected color is shown to the user is not the same
+ * that the one proposed on the mocks
  */
 class ProductSelector extends React.Component<ProductSelectorProps, ProductSelectorState> {
   constructor(props: ProductSelectorProps) {
